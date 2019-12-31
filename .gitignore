@@ -1,0 +1,4 @@
+.out
+packaged.yaml
+node_modules
+.env

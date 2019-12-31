@@ -1,0 +1,11 @@
+{
+  "name": "aws-chat-app",
+  "version": "0.0.1",
+  "description": "WebSockets on API Gateway",
+  "main": "app.js",
+  "author": "jrbeverly",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.596.0"
+  }
+}

@@ -1,0 +1,11 @@
+version: '3'
+
+#wscat -c ${WSCAT_URI}
+services:
+  chat:
+    image: node:latest
+    environment:
+      - WSCAT_URI=${WSCAT_URI}
+    command: bash -c "npm i -g wscat && echo ${WSCAT_URI} && bash"
+    stdin_open: true
+    tty: true
