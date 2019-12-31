@@ -50,7 +50,7 @@ I built this while I was looking into serverless chat-ops. At the time I was tin
 
 ### Terraform
 
-I had originally intended to write this in terraform, however at time of development (& writing), Terraform does not have support for the new version of API Gateway (V2). I have included CloudFormation in Terraform prototype in the directory [tests/] for future reference. Rather than trying to get this working, I looked for ways to setup a terraform-like experience in cloudformation.
+I had originally intended to write this in terraform, however at time of development (& writing), Terraform does not have support for the new version of API Gateway (V2). I have included CloudFormation in Terraform prototype in the directory tests/ for future reference. Rather than trying to get this working, I looked for ways to setup a terraform-like experience in cloudformation.
 
 ### CfPack
 
