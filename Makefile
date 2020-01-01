@@ -14,6 +14,7 @@ help: ## This help text.
 
 .PHONY: pack
 pack: ## Package the yaml files as a single 
+	@mkdir -p "$(DIR_OUT)"
 	@cfpack build
 
 .PHONY: package
@@ -60,7 +61,7 @@ outputs: ## Describes the outputs of the deployed cloudformation stack.
 
 .PHONY: docker
 docker: ## Runs AWS SAM in docker.
-	@docker build -t sam -f .github/environments/aws-sam/Dockerfile .
+	@docker build -t sam -f .github/environments/aws-sam/Dockerfile .github/environments/aws-sam/.
 	@docker run \
 		--rm -it \
 		-e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} \
@@ -77,7 +78,7 @@ docker: ## Runs AWS SAM in docker.
 chat: ## Login to one of the chat sessions.
 	@echo wscat -c '$$WSCAT_URI'
 	@echo '{"message":"sendmessage", "data":"hello world"}'
-	@cd docker/ && docker-compose up -d && docker exec -it tests_chat_1 bash
+	@cd docker/ && docker-compose up -d && docker exec -it docker_chat_1 bash
 
 .PHONY: chat-stop
 stop: ## Halt the existing chat services.
