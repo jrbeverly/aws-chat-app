@@ -38,6 +38,29 @@ The build-harness does a bit more in this case, as I experimented with a couple 
 - `docker-compose` for testing the service with `wscat`
 - `awscli` for describing and working with the deployed cloudformation stack
 
+### Deploy
+
+Using docker, you can build and deploy the sample using the following steps:
+
+```bash
+make docker
+make pack
+make package
+make deploy
+```
+
+You can get the URL for the websocket by calling `make outputs`. This can then be provided to the docker-compose template in docker/.
+
+```bash
+make outputs
+
+echo "WSCAT_URI=wss://<id>.execute-api.<region>.amazonaws.com/<env>" > docker/.env
+
+make chat
+# wscat -c $WSCAT_URI
+# {"message":"sendmessage", "data":"hello world"}
+```
+
 ## Notes
 
 I built this while I was looking into serverless chat-ops. At the time I was tinkering with ideas about chat-ops like services that could be used to manage key rotation in external services. This lead to some experiments with Hubot and AWS Lambda. I thought this example would offer sufficient complexity for tinkering with the idea of a lambda-based application for working with different services. The ideas were as follows:
