@@ -1,0 +1,15 @@
+slug: aws-chat-app
+description: SAM Application for a simple chat application based on WebSockets in API Gateway
+project: workbench
+namespace:
+status: archived
+icon: icon.svg
+license:
+  type: MIT
+  content: Jonathan Beverly <jrbeverly>
+  year: 2019
+topics: |-
+  [
+    "aws-websockets",
+    "experiment"
+  ]
